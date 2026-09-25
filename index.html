@@ -182,6 +182,9 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
 .loc-field{height:38px;border:1.5px solid var(--paper-dark);border-radius:4px;background:var(--chalk);display:flex;align-items:center;padding:0 12px;gap:8px;font-size:13px;color:var(--muted)}
 .form-textarea{height:80px;border:1.5px solid var(--paper-dark);border-radius:4px;padding:10px 12px;font-size:13px;background:var(--chalk);color:var(--muted);resize:none;width:100%;font-family:'Barlow',sans-serif}
 .upload-box{height:64px;border:2px dashed var(--paper-dark);border-radius:4px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--muted);cursor:pointer;background:var(--paper);font-weight:500}
+.r-tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:white;font-size:11px;line-height:1.5;padding:8px 10px;border-radius:6px;width:160px;text-align:left;display:none;z-index:10;pointer-events:none}
+.r-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
+.estado-btn:hover .r-tooltip{display:block}
 
 @media(max-width:600px){
   .nav-links{display:none}.ham{display:block}
@@ -233,7 +236,7 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
       <div class="section-title">De la calle<br>a la cancha</div>
       <button class="ver-mas" onclick="goTo('proyecto')">Ver más →</button>
     </div>
-    <p class="about-text">Haciendo Uber por la región de Valparaíso descubrí algo: decenas de multicanchas con su losa intacta, en pie, pero sin aros ni mallas. Lo más barato de reponer. Lo que más falta hace. Proyecto Rebote nace para catastrarlas, estandarizar cómo repararlas y devolvérselas al barrio.</p>
+    <p class="about-text">Por esas cosas de la vida, recorriendo la región de Valparaíso descubrí algo que nadie parecía ver: decenas de multicanchas con su losa intacta, en pie, pero sin aros ni mallas. Proyecto Rebote nace para mapearlas, recuperarlas y devolvérselas al barrio.</p>
     <div class="phases-landing">
       <div class="phase-card activa"><div class="phase-pip"></div><div class="phase-num">Fase 1 · En curso</div><div class="phase-name">Catastro</div><div class="phase-desc">Mapear todas las canchas y documentar su estado real.</div></div>
       <div class="phase-card"><div class="phase-pip"></div><div class="phase-num">Fase 2 · Próximamente</div><div class="phase-name">Estándares</div><div class="phase-desc">El aro ideal: durable, replicable, open-source.</div></div>
@@ -278,7 +281,7 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     <p class="about-text" style="margin-bottom:16px">No necesitas ser experto. Con saber dónde está y qué le falta es suficiente para sumarla al mapa.</p>
     <div class="report-explain">
       <div class="explain-block"><h3>¿Qué significa el estado?</h3><div class="estados-grid"><div class="estado-row"><div class="estado-icon" style="background:#E8400A"></div><div><div class="estado-info-name">Inhabilitada</div><div class="estado-info-desc">No se puede usar. Faltan aros, tableros o mallas.</div></div></div><div class="estado-row"><div class="estado-icon" style="background:#D4A017"></div><div><div class="estado-info-name">Parcial</div><div class="estado-info-desc">Se puede usar con limitaciones. Falta algo pero hay algo funcional.</div></div></div><div class="estado-row"><div class="estado-icon" style="background:#2D7A2D"></div><div><div class="estado-info-name">Funcional</div><div class="estado-info-desc">Equipamiento completo. Vale igual reportarla para el mapa.</div></div></div></div></div>
-      <div class="explain-block"><h3>¿Qué necesitas?</h3><div class="checklist"><div class="check-row"><div class="check-icon">📍</div>La dirección o nombre del sector</div><div class="check-row"><div class="check-icon">👁</div>Lo que ves: si tiene aro, tablero, mallas</div><div class="check-row"><div class="check-icon">📷</div>Una foto si puedes tomarla</div><div class="check-row"><div class="check-icon">⏱</div>Menos de 3 minutos de tu tiempo</div></div></div>
+      <div class="explain-block"><h3>¿Qué necesitas?</h3><div class="checklist"><div class="check-row"><div class="check-icon">📍</div>La dirección y nombre del sector</div><div class="check-row"><div class="check-icon">👁</div>Lo que ves: si tiene aro, tablero, mallas, el estado en general</div><div class="check-row"><div class="check-icon">📷</div>Fotos si puedes tomarlas</div><div class="check-row"><div class="check-icon">⏱</div>Menos de 5 minutos de tu tiempo</div></div></div>
     </div>
     <button class="btn-brand" style="width:100%;margin-top:16px;font-size:15px;padding:14px" onclick="goTo('reportar')">Reportar una cancha</button>
   </div>
@@ -306,8 +309,8 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     <button class="back-btn" onclick="goTo('home')">← Volver</button>
     <div class="page-eyebrow">El proyecto</div>
     <div class="page-title">De la calle<br>a la cancha</div>
-    <div class="page-sub">Cómo un descubrimiento haciendo Uber se convirtió en una iniciativa para recuperar los espacios deportivos del barrio.</div>
-    <div class="about-block"><h3>El origen</h3><p>Haciendo Uber por la región de Valparaíso noté algo que nadie parecía ver: decenas de multicanchas con su losa intacta, en pie, pero sin aros ni mallas. Lo más barato de reponer. De pequeño el básquetbol me ayudó con la confianza, el compañerismo y a despejar la mente. Hoy veo jóvenes sin esos espacios.</p></div>
+    <div class="page-sub">Cómo en un intento de sobrevivir económicamente se convirtió en una iniciativa para recuperar los espacios deportivos de los barrios.</div>
+    <div class="about-block"><h3>El origen</h3><p>Soy kinesiólogo y llevo cuatro años emprendiendo con un software para profesionales de salud independientes — <a href="https://clinifica.com/pro" target="_blank" style="color:var(--brand);text-decoration:none;border-bottom:1px solid var(--brand)">Clinifica</a>. Ha estado difícil. Para poder subsistir sin abandonar el proyecto, salí a hacer Uber: me da flexibilidad y me permite seguir. Fue así, recorriendo la región de Valparaíso entre viaje y viaje, que empecé a notar algo que nadie parecía ver: decenas de multicanchas con su losa intacta, sus arcos en pie, pero sin aros, sin mallas, sin lo básico para jugar. Y justamente eso es lo más fácil de reponer. De joven el básquetbol me ayudó con la confianza, el compañerismo y a despejar la mente. Hoy veo jóvenes sin esos espacios — y con tecnología y comunidad, podemos devolvérselos.</p></div>
     <div class="about-block">
       <h3>Las fases</h3>
       <div class="phases-list">
@@ -330,8 +333,8 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     <button class="back-btn" onclick="goTo('home')">← Volver</button>
     <div class="page-eyebrow">Canchas</div>
     <div class="page-title">Catastro<br>de canchas</div>
-    <div class="page-sub">El punto indica el estado físico. El anillo azul indica verificación en terreno.</div>
-    <div class="filters-wrap">
+    <div class="page-sub">Recuerda que es un proyecto de canchas <strong>públicas</strong> — solo serán aceptadas y verificadas aquellas canchas de uso y acceso público. El punto indica el estado físico, el anillo azul indica que ha sido verificada.</div>
+    <div class="filters-wrap" style="grid-template-columns:1fr 1fr 1fr">
       <div class="filter-field">
         <label class="filter-label">Estado</label>
         <select class="filter-select" id="filtroEstado" onchange="filtrar()">
@@ -339,6 +342,15 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
           <option value="funcional">Funcional</option>
           <option value="parcial">Parcial</option>
           <option value="inhabilitada">Inhabilitada</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label class="filter-label">Tipo</label>
+        <select class="filter-select" id="filtroTipo" onchange="filtrar()">
+          <option value="todos">Todos</option>
+          <option value="básquetbol">Básquetbol</option>
+          <option value="fútbol">Fútbol</option>
+          <option value="multicancha">Multicancha</option>
         </select>
       </div>
       <div class="filter-field">
@@ -350,7 +362,6 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
       </div>
     </div>
     <div class="map-placeholder" style="margin-bottom:12px;height:300px">
-      <!-- Google Maps API se integrará aquí -->
       <p>🗺️ Mapa interactivo</p>
       <p style="font-size:11px;color:var(--muted)">Google Maps API — próximamente</p>
     </div>
@@ -360,9 +371,36 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     </div>
     <span class="results-count" id="resultsCount">3 canchas</span>
     <div class="cancha-list" id="canchaList">
-      <div class="cancha-card" data-estado="inhabilitada" data-comuna="valparaíso"><div class="cancha-name">Multicancha Villa Francia</div><div class="cancha-loc">Valparaíso · hace 2 días · Básquetbol y fútbol</div><div class="cancha-meta"><span class="estado-pill inh"><span class="estado-dot-sm" style="background:#E8400A;display:inline-block"></span> Inhabilitada</span><div class="ver-tag">✓ Verificada</div></div><div class="cancha-img">📷</div></div>
-      <div class="cancha-card" data-estado="parcial" data-comuna="valparaíso"><div class="cancha-name">Cancha Cerro Alegre</div><div class="cancha-loc">Valparaíso · hace 5 días · Básquetbol</div><div class="cancha-meta"><span class="estado-pill par"><span class="estado-dot-sm" style="background:#D4A017;display:inline-block"></span> Parcial</span><span style="font-size:11px;color:#AAAAAA;font-weight:500">Sin verificar</span></div><div class="cancha-img">📷</div></div>
-      <div class="cancha-card" data-estado="inhabilitada" data-comuna="quilpué"><div class="cancha-name">Multicancha Lo Orozco</div><div class="cancha-loc">Quilpué · hace 1 semana · Fútbol y básquetbol</div><div class="cancha-meta"><span class="estado-pill inh"><span class="estado-dot-sm" style="background:#E8400A;display:inline-block"></span> Inhabilitada</span><span style="font-size:11px;color:#AAAAAA;font-weight:500">Sin verificar</span></div><div class="cancha-img">📷</div></div>
+      <div class="cancha-card" data-estado="inhabilitada" data-comuna="valparaíso" data-tipo="multicancha">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div class="cancha-name">Multicancha Villa Francia</div>
+            <div class="cancha-loc">Valparaíso · hace 2 días · Básquetbol y fútbol</div>
+            <div class="cancha-meta"><span class="estado-pill inh"><span class="estado-dot-sm" style="background:#E8400A;display:inline-block"></span> Inhabilitada</span><div class="ver-tag">✓ Verificada</div></div>
+          </div>
+          <div style="width:216px;height:72px;border-radius:6px;background:var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted)">📷</div>
+        </div>
+      </div>
+      <div class="cancha-card" data-estado="parcial" data-comuna="valparaíso" data-tipo="básquetbol">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div class="cancha-name">Cancha Cerro Alegre</div>
+            <div class="cancha-loc">Valparaíso · hace 5 días · Básquetbol</div>
+            <div class="cancha-meta"><span class="estado-pill par"><span class="estado-dot-sm" style="background:#D4A017;display:inline-block"></span> Parcial</span><span style="font-size:11px;color:#AAAAAA;font-weight:500">Sin verificar</span></div>
+          </div>
+          <div style="width:216px;height:72px;border-radius:6px;background:var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted)">📷</div>
+        </div>
+      </div>
+      <div class="cancha-card" data-estado="inhabilitada" data-comuna="quilpué" data-tipo="multicancha">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="flex:1;min-width:0">
+            <div class="cancha-name">Multicancha Lo Orozco</div>
+            <div class="cancha-loc">Quilpué · hace 1 semana · Fútbol y básquetbol</div>
+            <div class="cancha-meta"><span class="estado-pill inh"><span class="estado-dot-sm" style="background:#E8400A;display:inline-block"></span> Inhabilitada</span><span style="font-size:11px;color:#AAAAAA;font-weight:500">Sin verificar</span></div>
+          </div>
+          <div style="width:216px;height:72px;border-radius:6px;background:var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted)">📷</div>
+        </div>
+      </div>
     </div>
     <div class="no-results" id="noResults"><div style="font-size:28px;margin-bottom:8px">📍</div><div class="no-results-title">No encontramos esa cancha</div><p class="no-results-text">Puede que aún no esté en el catastro.<br>¡Sé el primero en reportarla!</p></div>
     <div class="report-nudge"><div class="nudge-text"><strong>¿No ves tu cancha?</strong>Ayúdanos a sumarla al catastro.</div><button class="nudge-btn" onclick="goTo('reportar')">Reportar →</button></div>
@@ -375,24 +413,151 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     <button class="back-btn" onclick="goTo('home')">← Volver</button>
     <div class="page-eyebrow">Reportar</div>
     <div class="page-title">Cada reporte<br>cuenta</div>
-    <div class="page-sub">Tú ves la cancha, nosotros la verificamos y la sumamos al mapa.</div>
-    <div class="about-block" style="margin-bottom:16px"><h3>¿Cómo funciona?</h3><p>No necesitas datos técnicos. Con la ubicación y una foto ya es suficiente.</p>
+    <div class="page-sub">Tú nos indicas la cancha, nosotros la verificamos y la sumamos al mapa.</div>
+    <div class="about-block" style="margin-bottom:16px"><h3>¿Cómo funciona?</h3><p>No necesitas datos técnicos. Con la ubicación y saber el estado ya es suficiente.</p>
       <div class="steps-list">
         <div class="step-row"><div class="step-num">1</div><div class="step-text">Completa el formulario con los datos básicos de la cancha.</div></div>
-        <div class="step-row"><div class="step-num">2</div><div class="step-text">Sube una foto si puedes — ayuda a priorizar la verificación.</div></div>
-        <div class="step-row"><div class="step-num">3</div><div class="step-text">Vamos en terreno, confirmamos el estado y actualizamos el mapa.</div></div>
+        <div class="step-row"><div class="step-num">2</div><div class="step-text">Sube fotos si puedes — ayuda a priorizar la verificación.</div></div>
+        <div class="step-row"><div class="step-num">3</div><div class="step-text">Verificamos, confirmamos el estado y actualizamos el mapa.</div></div>
       </div>
     </div>
-    <div class="form-grid">
-      <div class="form-field"><label class="form-label">Nombre o referencia</label><input class="form-input" placeholder="Multicancha Villa Dulce"></div>
-      <div class="form-field"><label class="form-label">Comuna</label><input class="form-input" placeholder="Viña del Mar"></div>
-      <div class="form-field"><label class="form-label">Estado físico</label><select class="form-select"><option>Inhabilitada</option><option>Parcial</option><option>Funcional</option></select></div>
-      <div class="form-field"><label class="form-label">¿Qué falta?</label><select class="form-select"><option>Aro y tablero</option><option>Mallas de arco</option><option>Ambos</option><option>No sé</option></select></div>
-      <div class="form-field form-full"><label class="form-label">Ubicación</label><div class="loc-field">📍 Dirección o coordenadas</div></div>
-      <div class="form-field form-full"><label class="form-label">Observaciones</label><textarea class="form-textarea" placeholder="Describe lo que ves: losa, luminaria, cerco..."></textarea></div>
-      <div class="form-field form-full"><label class="form-label">Foto</label><div class="upload-box">📷 Subir imagen</div></div>
+
+    <!-- SECCIÓN 1: IDENTIFICACIÓN -->
+    <div class="about-block" style="margin-bottom:10px">
+      <h3>1 · Identificación</h3>
+      <div class="form-grid">
+        <div class="form-field form-full">
+          <label class="form-label">Nombre o referencia <span style="color:var(--brand)">*</span></label>
+          <input class="form-input" placeholder="Ej: Cancha de la Villa Francia, La cancha del cerro...">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Región</label>
+          <select class="form-select" disabled><option>R. Valparaíso</option></select>
+          <span style="font-size:10px;color:#B4B2A9;margin-top:3px;font-style:italic">Por ahora solo Región de Valparaíso</span>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Comuna <span style="color:var(--brand)">*</span></label>
+          <select class="form-select">
+            <option value="">Selecciona una comuna</option>
+            <option>Valparaíso</option><option>Viña del Mar</option><option>Quilpué</option>
+            <option>Villa Alemana</option><option>Concón</option><option>San Antonio</option>
+            <option>Quillota</option><option>La Calera</option><option>Los Andes</option>
+            <option>San Felipe</option><option>Limache</option><option>Olmué</option>
+            <option>Casablanca</option><option>Cartagena</option><option>El Quisco</option>
+            <option>El Tabo</option><option>Algarrobo</option><option>Santo Domingo</option>
+            <option>Isla de Pascua</option><option>Juan Fernández</option><option>Petorca</option>
+            <option>La Ligua</option><option>Cabildo</option><option>Zapallar</option>
+            <option>Papudo</option><option>Nogales</option><option>Hijuelas</option>
+            <option>La Cruz</option><option>Puchuncaví</option><option>Quintero</option>
+            <option>Panquehue</option><option>Catemu</option><option>Santa María</option>
+            <option>Putaendo</option><option>Rinconada</option><option>Llay-Llay</option>
+            <option>Calle Larga</option><option>San Esteban</option>
+          </select>
+        </div>
+        <div class="form-field form-full">
+          <label class="form-label">Tipo de cancha <span style="color:var(--brand)">*</span></label>
+          <select class="form-select">
+            <option value="">Selecciona tipo</option>
+            <option>Básquetbol</option>
+            <option>Fútbol</option>
+            <option>Multicancha (básquetbol y fútbol)</option>
+          </select>
+        </div>
+      </div>
     </div>
-    <button class="btn-brand" style="width:100%;margin-top:8px;font-size:16px;padding:14px">Enviar reporte</button>
+
+    <!-- SECCIÓN 2: UBICACIÓN -->
+    <div class="about-block" style="margin-bottom:10px">
+      <h3>2 · Ubicación en el mapa</h3>
+      <div style="border:1.5px solid var(--paper-dark);border-radius:4px;overflow:hidden">
+        <div style="padding:10px;border-bottom:1.5px solid var(--paper-dark);position:relative">
+          <input class="form-input" style="padding-left:32px" placeholder="Busca la calle, sector o lugar cercano...">
+          <span style="position:absolute;left:22px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px">⌕</span>
+        </div>
+        <div id="mapArea" onclick="pinLocation(event)" style="height:200px;background:#F2F2F0;cursor:crosshair;position:relative;overflow:hidden">
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="560" height="200" fill="#F2F2F0"/>
+            <rect x="0" y="0" width="100" height="200" fill="#C8D8E8" opacity="0.5"/>
+            <rect x="90" y="30" width="55" height="30" rx="2" fill="#E8E6E2"/><rect x="155" y="20" width="75" height="28" rx="2" fill="#E8E6E2"/><rect x="240" y="15" width="90" height="32" rx="2" fill="#E8E6E2"/><rect x="340" y="18" width="80" height="30" rx="2" fill="#E8E6E2"/><rect x="430" y="22" width="90" height="28" rx="2" fill="#E8E6E2"/>
+            <rect x="90" y="80" width="60" height="32" rx="2" fill="#E8E6E2"/><rect x="160" y="75" width="85" height="35" rx="2" fill="#E8E6E2"/><rect x="255" y="72" width="90" height="36" rx="2" fill="#E8E6E2"/><rect x="355" y="75" width="80" height="34" rx="2" fill="#E8E6E2"/><rect x="445" y="78" width="80" height="32" rx="2" fill="#E8E6E2"/>
+            <rect x="90" y="135" width="65" height="34" rx="2" fill="#E8E6E2"/><rect x="165" y="130" width="85" height="36" rx="2" fill="#E8E6E2"/><rect x="260" y="128" width="88" height="36" rx="2" fill="#E8E6E2"/><rect x="358" y="130" width="80" height="35" rx="2" fill="#E8E6E2"/><rect x="448" y="132" width="80" height="34" rx="2" fill="#E8E6E2"/>
+            <line x1="90" y1="0" x2="90" y2="200" stroke="white" stroke-width="4"/><line x1="0" y1="65" x2="560" y2="65" stroke="white" stroke-width="4"/><line x1="0" y1="120" x2="560" y2="120" stroke="white" stroke-width="4"/><line x1="155" y1="0" x2="155" y2="200" stroke="white" stroke-width="3"/><line x1="245" y1="0" x2="245" y2="200" stroke="white" stroke-width="3"/><line x1="345" y1="0" x2="345" y2="200" stroke="white" stroke-width="3"/><line x1="440" y1="0" x2="440" y2="200" stroke="white" stroke-width="3"/>
+            <text x="96" y="61" font-size="8" fill="#999" font-family="Barlow,sans-serif">Av. Argentina</text>
+            <text x="260" y="116" font-size="7" fill="#999" font-family="Barlow,sans-serif">Av. Pedro Montt</text>
+          </svg>
+          <div id="mapPin" style="position:absolute;font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));transform:translate(-50%,-100%);pointer-events:none;display:none">📍</div>
+          <div id="mapHint" style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--muted);font-weight:500;background:rgba(255,255,255,0.9);padding:4px 12px;border-radius:20px;white-space:nowrap">Haz clic en el mapa para marcar la ubicación de la cancha</div>
+        </div>
+        <div style="padding:8px 12px;font-size:11px;color:var(--muted);border-top:1.5px solid var(--paper-dark);display:flex;align-items:center;gap:6px">
+          <span>📍</span><span id="coordsText">Sin ubicación seleccionada</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3: ESTADO FÍSICO -->
+    <div class="about-block" style="margin-bottom:10px">
+      <h3>3 · Estado físico</h3>
+      <div class="form-grid">
+        <div class="form-field form-full">
+          <label class="form-label">Estado general <span style="color:var(--brand)">*</span></label>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+            <div class="estado-btn inh" onclick="selectEstadoR(this,'inh')" style="border:1.5px solid var(--paper-dark);border-radius:4px;padding:12px 8px;text-align:center;cursor:pointer;background:var(--chalk);position:relative">
+              <div class="r-tooltip">No se puede practicar el deporte — el estado físico de la cancha lo impide.</div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#E8400A;margin:0 auto 6px"></div>
+              <div style="font-size:12px;font-weight:600;color:var(--ink)">Inhabilitada</div>
+            </div>
+            <div class="estado-btn par" onclick="selectEstadoR(this,'par')" style="border:1.5px solid var(--paper-dark);border-radius:4px;padding:12px 8px;text-align:center;cursor:pointer;background:var(--chalk);position:relative">
+              <div class="r-tooltip">Se puede practicar el deporte pero con incomodidades o de forma no ideal.</div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#D4A017;margin:0 auto 6px"></div>
+              <div style="font-size:12px;font-weight:600;color:var(--ink)">Parcial</div>
+            </div>
+            <div class="estado-btn fun" onclick="selectEstadoR(this,'fun')" style="border:1.5px solid var(--paper-dark);border-radius:4px;padding:12px 8px;text-align:center;cursor:pointer;background:var(--chalk);position:relative">
+              <div class="r-tooltip">Permite el desarrollo de la práctica deportiva sin problemas.</div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#2D7A2D;margin:0 auto 6px"></div>
+              <div style="font-size:12px;font-weight:600;color:var(--ink)">Funcional</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-field form-full" id="bloqueFaltaR" style="overflow:hidden;transition:max-height 0.3s ease,opacity 0.3s ease,margin-top 0.3s ease;max-height:500px;opacity:1;margin-top:0">
+          <label class="form-label" style="margin-bottom:8px">Selecciona un elemento inexistente o en mal estado: <span style="color:var(--brand)">*</span></label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="falta-item" onclick="toggleFaltaR(this)" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border:1.5px solid var(--paper-dark);border-radius:4px;cursor:pointer;background:var(--chalk)"><div class="falta-chk" style="width:16px;height:16px;border-radius:3px;border:1.5px solid var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:white"></div><span style="font-size:12px;font-weight:500;color:var(--ink)">Aro y malla de básquetbol</span></div>
+            <div class="falta-item" onclick="toggleFaltaR(this)" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border:1.5px solid var(--paper-dark);border-radius:4px;cursor:pointer;background:var(--chalk)"><div class="falta-chk" style="width:16px;height:16px;border-radius:3px;border:1.5px solid var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:white"></div><span style="font-size:12px;font-weight:500;color:var(--ink)">Tablero de básquetbol</span></div>
+            <div class="falta-item" onclick="toggleFaltaR(this)" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border:1.5px solid var(--paper-dark);border-radius:4px;cursor:pointer;background:var(--chalk)"><div class="falta-chk" style="width:16px;height:16px;border-radius:3px;border:1.5px solid var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:white"></div><span style="font-size:12px;font-weight:500;color:var(--ink)">Arco de fútbol</span></div>
+            <div class="falta-item" onclick="toggleFaltaR(this)" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border:1.5px solid var(--paper-dark);border-radius:4px;cursor:pointer;background:var(--chalk)"><div class="falta-chk" style="width:16px;height:16px;border-radius:3px;border:1.5px solid var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:white"></div><span style="font-size:12px;font-weight:500;color:var(--ink)">Malla del arco de fútbol</span></div>
+            <div class="falta-item" onclick="toggleFaltaR(this)" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border:1.5px solid var(--paper-dark);border-radius:4px;cursor:pointer;background:var(--chalk)"><div class="falta-chk" style="width:16px;height:16px;border-radius:3px;border:1.5px solid var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:white"></div><span style="font-size:12px;font-weight:500;color:var(--ink)">Luminaria</span></div>
+            <div class="falta-item" onclick="toggleFaltaR(this)" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border:1.5px solid var(--paper-dark);border-radius:4px;cursor:pointer;background:var(--chalk)"><div class="falta-chk" style="width:16px;height:16px;border-radius:3px;border:1.5px solid var(--paper-dark);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:white"></div><span style="font-size:12px;font-weight:500;color:var(--ink)">Estado de la losa</span></div>
+          </div>
+          <div style="margin-top:8px;display:flex;flex-direction:column;gap:5px">
+            <label class="form-label">Otro</label>
+            <input class="form-input" placeholder="Describe otro elemento inexistente o en mal estado...">
+          </div>
+        </div>
+        <div class="form-field form-full">
+          <label class="form-label">Observaciones</label>
+          <textarea class="form-textarea" placeholder="Describe en qué estado están los elementos que seleccionaste y otros comentarios que estimes pertinentes respecto al estado físico de la cancha."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 4: FOTOS -->
+    <div class="about-block" style="margin-bottom:16px">
+      <h3>4 · Fotos</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="aspect-ratio:1;border:1.5px solid var(--brand);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:#FEF0EC;position:relative">
+          <span style="position:absolute;top:4px;left:4px;background:var(--brand);color:white;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;text-transform:uppercase">Portada</span>
+          <span style="font-size:20px">📷</span><span style="font-size:10px;color:var(--muted);font-weight:500">Foto principal</span>
+        </div>
+        <div style="aspect-ratio:1;border:1.5px dashed var(--paper-dark);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:var(--paper)"><span style="font-size:20px">📷</span><span style="font-size:10px;color:var(--muted);font-weight:500">Foto 2</span></div>
+        <div style="aspect-ratio:1;border:1.5px dashed var(--paper-dark);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:var(--paper)"><span style="font-size:20px">📷</span><span style="font-size:10px;color:var(--muted);font-weight:500">Foto 3</span></div>
+        <div style="aspect-ratio:1;border:1.5px dashed var(--paper-dark);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:var(--paper)"><span style="font-size:20px">📷</span><span style="font-size:10px;color:var(--muted);font-weight:500">Foto 4</span></div>
+        <div style="aspect-ratio:1;border:1.5px dashed var(--paper-dark);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:var(--paper)"><span style="font-size:20px">📷</span><span style="font-size:10px;color:var(--muted);font-weight:500">Foto 5</span></div>
+        <div style="aspect-ratio:1;border:1.5px dashed var(--paper-dark);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:var(--paper)"><span style="font-size:20px">📷</span><span style="font-size:10px;color:var(--muted);font-weight:500">Foto 6</span></div>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5">La primera foto es la portada — aparecerá en el mapa. Puedes subir hasta 6 fotos. Formatos: JPG, PNG.</p>
+    </div>
+
+    <button class="btn-brand" style="width:100%;font-size:16px;padding:14px">Enviar reporte</button>
   </div>
 </div>
 
@@ -436,15 +601,48 @@ function selectAmount(btn){
   document.querySelectorAll('.amount-btn').forEach(b=>b.classList.remove('sel'));
   btn.classList.add('sel');
 }
+function pinLocation(e){
+  var area=document.getElementById('mapArea');
+  var rect=area.getBoundingClientRect();
+  var x=e.clientX-rect.left;
+  var y=e.clientY-rect.top;
+  var pin=document.getElementById('mapPin');
+  pin.style.display='block';
+  pin.style.left=x+'px';
+  pin.style.top=y+'px';
+  document.getElementById('mapHint').style.display='none';
+  var lat=(-33.04-(y/rect.height-0.5)*0.01).toFixed(6);
+  var lng=(-71.62+(x/rect.width-0.5)*0.02).toFixed(6);
+  document.getElementById('coordsText').textContent=lat+', '+lng+' · haz clic en otro punto para corregir';
+}
+function selectEstadoR(btn,tipo){
+  document.querySelectorAll('.estado-btn').forEach(function(b){
+    b.style.borderColor='';b.style.background='';
+  });
+  if(tipo==='inh'){btn.style.borderColor='#E8400A';btn.style.background='#FEF0EC';}
+  else if(tipo==='par'){btn.style.borderColor='#D4A017';btn.style.background='#FEF9EC';}
+  else if(tipo==='fun'){btn.style.borderColor='#2D7A2D';btn.style.background='#EDF7ED';}
+  var bloque=document.getElementById('bloqueFaltaR');
+  if(tipo==='fun'){bloque.style.maxHeight='0';bloque.style.opacity='0';bloque.style.marginTop='0';bloque.style.pointerEvents='none';}
+  else{bloque.style.maxHeight='500px';bloque.style.opacity='1';bloque.style.marginTop='0';bloque.style.pointerEvents='';}
+}
+function toggleFaltaR(item){
+  var active=item.classList.toggle('active');
+  var chk=item.querySelector('.falta-chk');
+  if(active){item.style.borderColor='#E8400A';item.style.background='#FEF0EC';chk.style.background='#E8400A';chk.style.borderColor='#E8400A';chk.textContent='✓';}
+  else{item.style.borderColor='';item.style.background='';chk.style.background='';chk.style.borderColor='';chk.textContent='';}
+}
 function filtrar(){
   var estado=document.getElementById('filtroEstado').value;
+  var tipo=document.getElementById('filtroTipo').value;
   var comuna=document.getElementById('filtroComuna').value.toLowerCase().trim();
   var cards=document.querySelectorAll('#canchaList .cancha-card');
   var visibles=0;
   cards.forEach(function(card){
     var matchEstado=estado==='todas'||card.getAttribute('data-estado')===estado;
+    var matchTipo=tipo==='todos'||card.getAttribute('data-tipo')===tipo;
     var matchComuna=comuna===''||card.getAttribute('data-comuna').includes(comuna);
-    if(matchEstado&&matchComuna){card.style.display='block';visibles++;}
+    if(matchEstado&&matchTipo&&matchComuna){card.style.display='block';visibles++;}
     else{card.style.display='none';}
   });
   document.getElementById('resultsCount').textContent=visibles+(visibles===1?' cancha':' canchas');

@@ -207,7 +207,7 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     <button class="nav-link" onclick="goTo('proyecto')">El proyecto</button>
     <button class="nav-link" onclick="goTo('canchas')">Canchas</button>
     <button class="nav-link" onclick="goTo('reportar')">Reportar</button>
-    <button class="nav-cta" onclick="goTo('apoyar')">Apoyar</button>
+    <button class="nav-cta" onclick="goTo('proyecto');setTimeout(function(){document.getElementById('apoyar-anchor').scrollIntoView({behavior:'smooth'})},100)">Apoyar</button>
   </div>
   <button class="ham" onclick="toggleMenu()" aria-label="Menú">☰</button>
 </nav>
@@ -215,7 +215,7 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
   <button class="mobile-link" onclick="goTo('proyecto');toggleMenu()">El proyecto</button>
   <button class="mobile-link" onclick="goTo('canchas');toggleMenu()">Canchas</button>
   <button class="mobile-link" onclick="goTo('reportar');toggleMenu()">Reportar</button>
-  <button class="mobile-link" style="color:var(--brand)" onclick="goTo('apoyar');toggleMenu()">Apoyar</button>
+  <button class="mobile-link" style="color:var(--brand)" onclick="goTo('proyecto');toggleMenu();setTimeout(function(){document.getElementById('apoyar-anchor').scrollIntoView({behavior:'smooth'})},100)">Apoyar</button>
 </div>
 
 <!-- HOME -->
@@ -233,7 +233,7 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
   <div class="section">
     <div class="section-eyebrow">El proyecto</div>
     <div class="section-header">
-      <div class="section-title">De la calle<br>a la cancha</div>
+      <div class="section-title">Están ahí,<br>esperando</div>
       <button class="ver-mas" onclick="goTo('proyecto')">Ver más →</button>
     </div>
     <p class="about-text">Por esas cosas de la vida, recorriendo la región de Valparaíso descubrí algo que nadie parecía ver: decenas de multicanchas con su losa intacta, en pie, pero sin aros ni mallas. Proyecto Rebote nace para mapearlas, recuperarlas y devolvérselas al barrio.</p>
@@ -285,20 +285,10 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     </div>
     <button class="btn-brand" style="width:100%;margin-top:16px;font-size:15px;padding:14px" onclick="goTo('reportar')">Reportar una cancha</button>
   </div>
-  <div class="support-wrap">
-    <div class="support-inner">
-      <div class="support-avatar">F</div>
-      <div class="support-name">Felipe</div>
-      <div class="support-role">Kinesiólogo · Fundador de Proyecto Rebote · Valparaíso</div>
-      <p class="support-text">Esto lo empujé solo, haciendo Uber y recorriendo los cerros. Si lo que hago te parece valioso, puedes apoyar el trabajo directamente. Sin promesas de informes ni rendiciones de cuentas — solo alguien que cree que las canchas del barrio importan.</p>
-      <div class="support-amounts">
-        <button class="amount-btn sel" onclick="selectAmount(this)">$2.000</button>
-        <button class="amount-btn" onclick="selectAmount(this)">$5.000</button>
-        <button class="amount-btn" onclick="selectAmount(this)">$10.000</button>
-        <button class="amount-btn" onclick="selectAmount(this)">Otro</button>
-      </div>
-      <button class="support-cta">Apoyar a Felipe</button>
-      <div class="support-hint">Pago seguro · Sin suscripciones · Gracias de corazón</div>
+  <div style="background:var(--paper-dark);padding:28px">
+    <div style="max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <p style="font-size:28px;color:var(--ink-soft);line-height:1.4;flex:1;min-width:200px;font-family:'Barlow Condensed',sans-serif;font-weight:500">"Lo hago porque creo que vale la pena. Si tú también lo crees, puedes apoyarme."</p>
+      <button class="btn-brand" onclick="goTo('proyecto');setTimeout(function(){document.getElementById('apoyar-anchor').scrollIntoView({behavior:'smooth'})},100)" style="white-space:nowrap;flex-shrink:0">Aportar →</button>
     </div>
   </div>
 </div>
@@ -310,7 +300,7 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
     <div class="page-eyebrow">El proyecto</div>
     <div class="page-title">De la calle<br>a la cancha</div>
     <div class="page-sub">Cómo en un intento de sobrevivir económicamente se convirtió en una iniciativa para recuperar los espacios deportivos de los barrios.</div>
-    <div class="about-block"><h3>El origen</h3><p>Soy kinesiólogo y llevo cuatro años emprendiendo con un software para profesionales de salud independientes — <a href="https://clinifica.com/pro" target="_blank" style="color:var(--brand);text-decoration:none;border-bottom:1px solid var(--brand)">Clinifica</a>. Ha estado difícil. Para poder subsistir sin abandonar el proyecto, salí a hacer Uber: me da flexibilidad y me permite seguir. Fue así, recorriendo la región de Valparaíso entre viaje y viaje, que empecé a notar algo que nadie parecía ver: decenas de multicanchas con su losa intacta, sus arcos en pie, pero sin aros, sin mallas, sin lo básico para jugar. Y justamente eso es lo más fácil de reponer. De joven el básquetbol me ayudó con la confianza, el compañerismo y a despejar la mente. Hoy veo jóvenes sin esos espacios — y con tecnología y comunidad, podemos devolvérselos.</p></div>
+    <div class="about-block"><h3>El origen</h3><p>Soy profesional de salud y llevo cuatro años emprendiendo en un software para profesionales de salud — <a href="https://clinifica.com/pro" target="_blank" style="color:var(--brand);text-decoration:none;border-bottom:1px solid var(--brand)">Clinifica</a>. Ha estado difícil. Para poder subsistir sin abandonar el proyecto, salí a hacer Uber: me da flexibilidad y me permite seguir. Fue así, recorriendo la región de Valparaíso entre viaje y viaje, que empecé a notar algo, un hallazgo: decenas de multicanchas con su losa intacta, sus arcos en pie, pero sin aros, sin mallas, sin lo básico para jugar, y justamente eso es lo más fácil de reponer. Lamentablemente los que financiaron esos espacios ya se sacaron la foto y consiguieron los votos, no hay interés en su mantención ni en volverlas a habilitar. Hoy veo a niños y jóvenes poder utilizar esas canchas, pero estoy seguro que con la colaboración de la comunidad y la tecnología, podemos devolvérselos.</p></div>
     <div class="about-block">
       <h3>Las fases</h3>
       <div class="phases-list">
@@ -321,9 +311,50 @@ nav{background:var(--paper);padding:12px 24px;display:flex;justify-content:space
       </div>
     </div>
     <div class="about-block"><h3>Equipo</h3><div class="team-grid">
-      <div class="team-card"><div class="avatar">F</div><div><div class="team-name">Felipe</div><div class="team-role">Fundador · Kinesiólogo</div></div></div>
-      <div class="team-card"><div class="avatar" style="background:var(--brand)">+</div><div><div class="team-name">Únete</div><div class="team-role">Buscamos colaboradores</div></div></div>
+      <div class="team-card"><div class="avatar">F</div><div><div class="team-name">Felipe</div><div class="team-role">Fundador · <a href="mailto:felipe.l.ch@hotmail.com" style="color:var(--brand);text-decoration:none;border-bottom:1px solid var(--brand)">felipe.l.ch@hotmail.com</a></div></div></div>
+      <div class="team-card"><div class="avatar" style="background:var(--brand)">+</div><div><div class="team-name">Únete</div><div class="team-role">Si deseas colaborar llena <span style="color:var(--brand);font-weight:600;cursor:pointer;border-bottom:1px solid var(--brand)">este formulario</span></div></div></div>
     </div></div>
+
+    <div id="apoyar-anchor" class="about-block">
+      <h3>Apoyar el proyecto</h3>
+      <p style="font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:18px">Esto lo empujo solo. Si lo que hago te parece valioso, puedes apoyarme directamente.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+        <div style="background:var(--paper);border:1.5px solid var(--paper-dark);border-radius:8px;padding:16px">
+          <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;font-family:'Barlow Condensed',sans-serif">Aporte único</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:center;background:var(--chalk);border:1.5px solid var(--paper-dark);border-radius:6px;padding:10px 14px;cursor:pointer" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--paper-dark)'">
+              <div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--ink)">Asistencia</div><div style="font-size:11px;color:var(--muted)">Un gesto que suma</div></div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--brand)">$5.000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;background:var(--chalk);border:1.5px solid var(--paper-dark);border-radius:6px;padding:10px 14px;cursor:pointer" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--paper-dark)'">
+              <div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--ink)">Pase Gol</div><div style="font-size:11px;color:var(--muted)">El pase que define</div></div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--brand)">$10.000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;background:var(--chalk);border:1.5px solid var(--paper-dark);border-radius:6px;padding:10px 14px;cursor:pointer" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--paper-dark)'">
+              <div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--ink)">Alley Oop</div><div style="font-size:11px;color:var(--muted)">Que jugada papá</div></div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--brand)">$15.000</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--paper);border:1.5px solid var(--paper-dark);border-radius:8px;padding:16px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;font-family:'Barlow Condensed',sans-serif">Suscripción mensual</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;justify-content:space-between;align-items:center;background:var(--chalk);border:1.5px solid var(--paper-dark);border-radius:6px;padding:10px 14px;cursor:pointer" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--paper-dark)'">
+                <div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--ink)">Hincha</div><div style="font-size:11px;color:var(--muted)">El que siempre está</div></div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--brand)">$5.000<span style="font-size:11px;font-weight:500;color:var(--muted)">/mes</span></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;background:var(--chalk);border:1.5px solid var(--paper-dark);border-radius:6px;padding:10px 14px;cursor:pointer" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='var(--paper-dark)'">
+                <div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--ink)">Socio</div><div style="font-size:11px;color:var(--muted)">Compromiso con el proyecto</div></div>
+                <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;color:var(--brand)">$10.000<span style="font-size:11px;font-weight:500;color:var(--muted)">/mes</span></div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:11px;color:var(--muted);margin-top:10px">Sin compromisos — puedes cancelar cuando quieras</p>
+        </div>
+      </div>
+      <button class="btn-brand" style="width:100%;font-size:15px;padding:13px">Aportar al proyecto</button>
+    </div>
   </div>
 </div>
 
